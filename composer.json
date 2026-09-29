@@ -1,0 +1,67 @@
+{
+    "name": "sphinx-code-studio/filament-mobile-navigation",
+    "description": "A Filament-native mobile bottom navigation bar resolved from Resources, Pages, and the current panel navigation.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "filament",
+        "filamentphp",
+        "laravel",
+        "mobile-navigation",
+        "bottom-navigation",
+        "filament-plugin"
+    ],
+    "homepage": "https://github.com/sphinx-code-studio/filament-mobile-navigation",
+    "support": {
+        "issues": "https://github.com/sphinx-code-studio/filament-mobile-navigation/issues",
+        "source": "https://github.com/sphinx-code-studio/filament-mobile-navigation"
+    },
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^4.0 || ^5.0",
+        "illuminate/support": "^11.28 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0 || ^4.0",
+        "laravel/pint": "^1.24",
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^3.8 || ^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SphinxCodeStudio\\FilamentMobileNavigation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SphinxCodeStudio\\FilamentMobileNavigation\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SphinxCodeStudio\\FilamentMobileNavigation\\MobileNavigationServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "format": "pint",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "check": [
+            "@composer validate --strict",
+            "@format -- --test",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
